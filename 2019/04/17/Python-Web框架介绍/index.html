@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="Jack Wang">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Python-Web框架介绍">
+  <meta property="og:description" content="Pligram">
+  <meta property="og:site_name" content="Life Is Binary">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="Life Is Binary" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Life Is Binary</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(shenron_dragon_fantasy-wallpaper-1440x900.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Python-Web框架介绍</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/LifeIsBinary">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:1506833370@qq.com">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Jack Wang</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-04-17</span>
+            <span class="time">22:22:16</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/翻译/">翻译</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/open-source/">#open source</a> <a class="tag" href="/tags/翻译/">#翻译</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>针对 Python 中的 全栈框架（Django） 和 微型框架（Flask）行进介绍，对于一些应用特定场景的其他框架做简单的说明~</p>
+<p>英文原文：《A Complete Guide to Python Web Frameworks》作者：Premjith B P K</p>
+<p>原文链接：<a href="https://opensourceforu.com/2019/04/a-complete-guide-to-python-web-frameworks/" target="_blank" rel="noopener">https://opensourceforu.com/2019/04/a-complete-guide-to-python-web-frameworks/</a></p>
+<a id="more"></a>
+<h1 id="A-Complete-Guide-to-Python-Web-Frameworks"><a href="#A-Complete-Guide-to-Python-Web-Frameworks" class="headerlink" title="A Complete Guide to Python Web Frameworks"></a>A Complete Guide to Python Web Frameworks</h1><h1 id="Python-Web-框架介绍"><a href="#Python-Web-框架介绍" class="headerlink" title="Python Web 框架介绍"></a>Python Web 框架介绍</h1><p>Web frameworks are code libraries that make Web development faster and easier. The <strong>versatile</strong> programming language, Python, has many Web frameworks like Django, Web2py, Flask, Bottle, etc. We take a closer look at these in this article.</p>
+<p>Web 框架就是一些函数库，通过使用这些库使得 Web 开发更加简单快捷。Python 作为<strong>多功能的</strong>编程语言，有许多 Web 框架，像 Django、Web2py、Flask 和 Bottle等等。接下来我们将来介绍这些框架的相关情况。</p>
+<p>Python is a valuable and flexible programming language designed specifically for teams trying to get a Web application up and running. Developers and frameworks are closely related since they are the building blocks of the products being <strong>crafted</strong>. With such frameworks, a set of solutions is born, thereby allowing the developer to focus more on the app logic rather than repetitive and other low-priority tasks.</p>
+<p>对于开发 Web 应用程序的团队，Python 是一种主流且非常灵活的编程语言。应用程序以一种模块化的开发模式进行<strong>开发</strong>，使得开发者和 Web 框架紧密的联系起来。调用框架中提供的大量的解决方案，使得开发者能够更加专注于应用程序的逻辑业务，不再为重复和低优先级的任务所扰。</p>
+<p>Nowadays, developers try Python’s <strong>robust</strong> collection of frameworks to deal with the details of the implementation, which helps to <strong>hasten</strong> the development and <strong>prototyping</strong> process. There are various well known Python Web frameworks out there – from vigorous full-stack frameworks specifically designed for enterprise based solutions to <strong>ultra-lightweight</strong> micro-frameworks streamlined for developing small and specialised tools.</p>
+<p>如今，开发者尝试使用<strong>强大功能的</strong> Python 框架去解决解决一些具体的实现细节，这个<strong>加速</strong>了<strong>原型</strong>设计和开发的进程。从针对企业的强大全栈框架到适合开发小型专业的工具的<strong>超轻量级</strong>微框架流，目前有各种各样的流行的 Python Web 框架。</p>
+<p>Python Web frameworks help in greatly cutting down the cost, the effort and the time spent on Web app development. We will share some key functionalities of these <strong>intriguing</strong> frameworks to help you during Web application development. In this article we aim to help you settle on the best framework, based on your needs.</p>
+<p>Python Web 框架在很大程度上削减了 Web 应用开发的成本、人力和时间周期。我们将分享这些<strong>流行</strong>框架中一些重要功能点，帮助在你开发 Web 应用程序中做的更好。我们希望能够帮助你确定针对自己实际需求的最合适框架。</p>
+<h2 id="What-are-Web-frameworks"><a href="#What-are-Web-frameworks" class="headerlink" title="What are Web frameworks?"></a>What are Web frameworks?</h2><h3 id="框架的作用"><a href="#框架的作用" class="headerlink" title="框架的作用"></a>框架的作用</h3><p>Web frameworks enable developers to create Web applications and services without getting into the details like sockets, protocols, thread management, etc. Some of the common duties of a Web framework are to handle cookies, get form parameters, deal with sessions, etc. There are two main types of frameworks available – the full-stack and the micro-framework.</p>
+<p>Web 框架使得开发者不需要去关注 Socket、协议 和 线程管理 等细节，专注于 Web 应用程序和服务的开发。框架的完成的大部分职责集中于 cookies 的处理、参数的获取以及 session 的处理等。主流的 Web 框架分为两大类：全栈框架 和 微型框架。</p>
+<h2 id="Full-stack-or-micro-framework"><a href="#Full-stack-or-micro-framework" class="headerlink" title="Full-stack or micro-framework?"></a>Full-stack or micro-framework?</h2><h3 id="选择全栈框架还是微型框架"><a href="#选择全栈框架还是微型框架" class="headerlink" title="选择全栈框架还是微型框架"></a>选择全栈框架还是微型框架</h3><p>You should be extremely focused while picking a framework, and the key things to consider should be the size and <strong>sophistication</strong> of the project. In case you’re hoping to get a function-oriented Web application that will collaborate with <strong>the rest of</strong> your <strong>association</strong>’s frameworks, then a full-stack alternative could help your team both in terms of time and effort. However, if you’re working on a small and relatively simple project with minimal requirements, a micro-framework is your best bet. A related question is: how much effort will you require from the framework? A full-stack Web framework should have all the components you require to develop a fully functional Web app – frame generators, access lists, templating, etc – so your team can assemble the page or app as per requirements. This is an <strong>alluring</strong> option for teams that are attempting to build a product quickly, since it enables them to focus only on the development of the app and not everything else that revolves around it. In any case, if you have sophisticated custom requirements or are already working with different types of custom software, you can’t exploit those libraries.</p>
+<p>当你在框架选择时，你应该将项目规模和<strong>复杂</strong>性作为考虑的重要因素。如果你希望应用的开发以业务功能为主，需要与<strong>其他的</strong>周边框架协作，全栈框架的选择将能够减少整个团队在开发时间和开发任务。但是，如果你在开发一个小型、简单需求的少的项目时，微型框架是你最好的选择。另一个需要考虑的问题是：你需要框架帮你完成多少事情？全栈 Web 框架包含了开发一个功能丰富 Web 应用的所有组件—框架生成器、访问列表和模板等。这使得你的团队能根据不同的需求创建出相应的页面和应用。对于希望快速开发出产品的团队这是一个很好的选择，因为这是使得他们更加专注于应用的开发而不是与之相关的周边事情。如果你有复杂的个性化需求或者已经在开发多种不同类型的定制化的软件，不管在什么情况下，你都不应该使用这些框架。</p>
+<h2 id="Full-stack-frameworks"><a href="#Full-stack-frameworks" class="headerlink" title="Full-stack frameworks"></a>Full-stack frameworks</h2><h3 id="全栈框架"><a href="#全栈框架" class="headerlink" title="全栈框架"></a>全栈框架</h3><p>There are a whole new set of full-stack options available among Python frameworks. Some of the prominent frameworks are TurboGears 2, Pylons, and Web2py. But the most popular one among them is Django.</p>
+<p>有许多新且完备的全栈 web Python框架选择方案：如主流的框架 TurboGears 2、Pylons 和 Web2py。但是其中最流行的是 Django。</p>
+<ul>
+<li><p>Django</p>
+<p>This is the most well-known Python framework and anyone can easily justify the reason behind it. A huge number of websites already use Django, from publishing houses to social media and sharing sites to significant <strong>establishments</strong> and non-profits. Since Django was initially developed for use in the newsroom, it’s not a big deal that dailies like the Washington Post and <strong>The Guardian</strong> work on this framework. New companies and startups like Eventbrite and Disqus have migrated to Django to improve conversion rates, while social media giants like Instagram and Pinterest have used it to control their dynamic Web apps.</p>
+<p>Django 是流程的 Python 框架，至于具体的原因大家不难理解。大量的网站使用了 Django，从出版社到社交媒体和分享网站，再到重要的<strong>机构</strong>和非盈利组织。由于 Django 最初开发于编辑部门，因此 华盛顿邮报 和 <strong>卫报</strong> 运行在该框架上也不是意外。一些新公司和初创公司像 Eventbrite 和 Disqus 已经在往 Django 迁移并且在提高完成度。同时社交巨头 Instagram 和 Pinterest 已经使用该框架去开发他们的动态 Web 应用。 </p>
+<p>When considered as a framework, Django is known for being quick to build and friendly for <strong>amateur</strong> developers. It’s a ‘<strong>batteries</strong> （电池）included’ framework, which means it supplies all the basic components you require such as authentication, rendering template, ORM, routing, etc. It’s also well documented, which isn’t the case with some other mainstream Web frameworks.</p>
+<p>当考虑到框架时，Django 以快速开发 和 对业务开发者友好 而著称。作为一种“可插拔式”的框架，它提供了所有你需要的基础的组件 认证、可渲染模板、ORM 和路由等。相比于其他的主流 Web 框架，它有良好的技术文档。</p>
+<p>Django can considerably reduce the time taken to bootstrap a new project by dealing with a lot of choices. However, what you gain in speed can be lost in long-term flexibility. For instance, the inbuilt ORM of Django works efficiently in major <strong>scenarios</strong>. However, it’s not as <strong>ground breaking</strong>（破土动工） as SQLAlchemy, which is also <strong>termed</strong> the best Python database abstraction tool. While you can <strong>hypothetically</strong> use SQLAlchemy with Django, you’ll lose out on some major functionalities that make Django so appealing to start with.</p>
+<p>通过对大量选择的处理，Django 能够在很大程度上减少新项目的引导时间。但是，在获得速度的同时也牺牲了长期开发维护的灵活性。例如，Django 内置的 ORM 在大部分<strong>情况</strong>下效果显著。但是，它无法像<strong>被称为</strong>最好的 Python 数据库抽象工具 SQLAlchemy那样有突破性。你可以想象在 Django 下使用 SQLAlchemy，但是那样你讲失去 Django 中的一些一开始就吸引人的重要功能。</p>
+</li>
+</ul>
+<ul>
+<li><p>Web2py</p>
+<p>This is another prominent full-stack framework. One thing to remember about Web2py is that it isn’t compatible with Python 3. The original developers behind Web2py have guaranteed a compatible successor for Python 3, but haven’t launched it till now.</p>
+<p>Web2py 是另一个主流的全栈框架。需要牢记的是 Web2py 不兼容 Python3。虽然 Web2py 的早期开发者已经保证会去开发兼容 Python3 的新版，但时至今日依然没有新版依然没有正式发布。</p>
+<p>Even though it is ten years behind the most recent version of Python, Web2py is still used by many major enterprises, including <strong>multinational</strong> banks. What makes this older Web framework still engaging for developers is its unique functionalities. For one, it’s as simple and easy to learn as Django, and is more flexible and portable too. The same code can be employed for almost any <strong>VPS</strong>（Virtual Private Servers） with a SQL database or MongoDB, regardless of whether AWS or Google App Engine are used.</p>
+<p>即便相较目前最新发布的 Python 版本已经十年时间了，Web2py 依然在许多大型企业中使用，其中就包括<strong>跨国</strong>银行。使得这个老 Web 框架依然有许多开发者在使用的原因，是他独一无二的功能。一方面，它即能够像 Django 一样简单易学习，又兼具灵活性和可扩展能力。不管是 AWS 还是 Google App Engine 中 VPS， 同样的一段代码几乎可以应用到 所用的使用 SQL  或者 Mongo DB 的 VPS 中 。</p>
+<p>Web2py has got <strong>intense</strong> support — it is well-documented and has a strong community behind it. Another perfect element is that Web2py is accompanied by its very own <strong>IDE</strong>（ Integrated Developer Editor） that incorporates a code editor, debugger, bug ticketing framework, a single tick deployment, etc. If your organisation is focused on Python 2 for the coming years or you intend to make use of some more established Python libraries and software, then Web2py could perfectly suit your requirements.</p>
+<p>Web2py 有优秀的文档手册和活跃的社区在其背后作为<strong>强大的</strong>支持。另一个亮点在于 Web2py 有自己的IDE，其中包含了 代码编辑器、调试器、bug 票务框架 和 单独的票务部署功能等等。如果你的团队在未来几年中开发以 Python2 为主，或者希望充分利用已有的众多 Python 库和应用，那么 Web2py 框架非常符合你的要求。</p>
+</li>
+</ul>
+<ul>
+<li><p>Pyramid</p>
+<p>Pyramid isn’t exactly a full-stack framework but bills（账单） itself as the Goldilocks framework. Pyramid is enriched with features without forcing any particular way of getting things done on users. It is lightweight without leaving you all alone as your app develops. It’s one of the most loved Web frameworks among experienced Python developers on account of its <strong>transparency</strong> and modularity, and has been used by both <strong>moderately</strong> sized teams as well as tech giants like Mozilla, Yelp, SurveyMonkey and Dropbox.</p>
+<p>Pyramid 确切的来说不是一个全栈的 Web 框架，并且自称是符合“金发姑娘”原则（<strong>适度原则</strong>）的框架。Pyramid 有这丰富的特性不会限制使用某种特定的方式去处理事情。作为一种轻量级的框架，不会使你随着应用的开发陷入独自一人的窘境。由于良好的<strong>通透性</strong>和模块化，Pyramid 是 Python 老鸟最喜爱的开发框架。不仅中等规模的团队在使用，像 Mozilla、Yelp、SurveyMonkey 和 Dropbox 这样的科技巨头也在使用。</p>
+<p>In reality, almost every component of a Pyramid framework can be <strong>swapped</strong> out. You can pick how you interface with a database, or even what type (or types) of databases you want to connect with. It doesn’t <strong>authorise</strong> certain choices for you like Django does, and it also <strong>discourages</strong> some ‘magic’ features which handle certain assignments automatically. It also doesn’t behave in an <strong>anticipated</strong> or attractive way.</p>
+<p>事实上，Pyramid 框架中几乎所有的组件都能够替换掉。你能够使用你的数据库接口，甚者连接任何你想要连接的数据库。它不会像Django那样授权处理具体的选择，也不鼓励自动化处理具体任务的奇妙功能。这使得它不会表现预期的或者吸引人的方式。</p>
+<p>Pyramid is popular because of its security solutions, which make it simple to set up and to check access control records. Another innovative functionality worth mentioning is Pyramid’s Traversal system for mapping URLs to code, which eventually makes it easy to build RESTful APIs.</p>
+<p>Pyramid 流程的原因是它安全的解决方案，使得访问控制记录的创建和检查变得简单。另一个值得关注的创新功能是 Pyramid 的从 URL 到 code 的映射的路由系统，这使得最终创建 RESTful 接口变得容易。</p>
+</li>
+</ul>
+<h2 id="Micro-frameworks"><a href="#Micro-frameworks" class="headerlink" title="Micro-frameworks"></a>Micro-frameworks</h2><h3 id="微型框架"><a href="#微型框架" class="headerlink" title="微型框架"></a>微型框架</h3><p>Consider the possibility that you don’t need handholding or the sophistication of a full-stack framework. Nowadays, modern Web apps require lots of moving parts, including database abstraction, frame approval and modified access control records. But there are a lot of Web applications that don’t require any of it. For such projects, a micro-framework might be exactly what’s required.</p>
+<p>考虑到你可能不需要全面和丰富的全栈框架。如今，新一代的 Web 应用需要许多可以插拔的部分，包括数据库抽象层，框架认证 和 可配置的访问控制规则。但是也有大部分的 Web 应用不要这些模块。对于这种项目，微型框架应该是最需要的。</p>
+<p>These ultra-lightweight frameworks are developed to get dead Web apps up and running as fast as possible. Their capabilities are minimal by design– any functionality you could get by installing another library is intentionally left out. An advantage of working with this moderate approach is that your code can be cleaner and the site quicker. This is because micro-frameworks are less abstracted than full-stack structures. The code you compose will be significantly closer to HTTP capacities than with a more beginner-friendly framework.</p>
+<p>这些超轻量级的应用被开发的目的是使得一些死掉的 Web 应用重新能被使用并且尽可能的运行的更快。他们的设计的功能精简—————— 对一些能通过安装一些其他的库满足的功能专门进行了移除。使用这些透明的方法的好处是使你的代码更加的简洁清晰，并且网站运行速度更快。这就是为什么微型框架没有全栈框架那么抽象。相比于对初学者友好的 Web 框架，你编写的代码将需要触及HTTP 的一些功能。</p>
+<ul>
+<li><p>Flask: </p>
+<p>Flask is undoubtedly the most famous micro-framework for Python and a standout amongst the most well-known Python structures, period. Like Django, it was developed to get Web applications up and running as fast and effortlessly as possible. Regardless of its <strong>tiny</strong> size, Flask has been used by huge organisations, including LinkedIn and Pinterest.</p>
+<p>Flask 无疑是最有名的 Python 微型框架，并且一直是最有名的 Python 结构中的佼佼者。和 Django 一样，开发 Flask 的目的是使得 Web 应用开发并尽可能运行的更快。虽然是微型框架，但 Flask 已经被一些大公司所使用，其中包括 LinkedIn 和 Pinterest。</p>
+<p>In any case, here’s the twist – since Flask is ideal for smaller, easier projects than Django, you can expect Web server development, support for Google App Engine and inbuilt unit testing. There is no database abstraction layer, form verification and validation, and auto upload features are disabled. However, every one of these features can be included via extensions. Some key setups incorporate SQLAlchemy for the database or Jinja2 for templating and CouchDB.</p>
+<p>无论如何，这是个较量。相比 Django，Flask是那些又小又简单项目的理想选择。因此，你可以期待 Web 服务器开发将支持 Google App Engine 并且 内置单元测试功能。Flask 不支持 数据库抽象层 和 表单验证，且自动上传的功能被禁用。但是，每一个这些功能都能够通过外部扩展来实现。例如一些主要的扩展包括 SQLAlchemy 数据库 、 Jinja2 模板和 CouchDB。</p>
+<p>Some Python designers opt for Flask rather than Django <strong>on the grounds that</strong> the former is increasingly pythonic, in that, it generally <strong>adheres</strong>（依附） to the Python <strong>mantra</strong>（口头禅） of there being one approach to accomplish something, and that code ought to be clear about what it’s doing. In case you prefer clean code <strong>from scratch</strong>, Flask might be a <strong>decent</strong> alternative.</p>
+<p>一些 Python 开发者会选择 Flask 而非 Django ，<strong>因为</strong>前者越来越 Pythonic。这更加符合 Pytho 之<strong>禅</strong>的原则：一种方式完成事情，并且相应的代码能够表明在做什么。如果你非常想要从头开始使代码更加简洁明了，Flask 应该是你合适的选择。</p>
+</li>
+</ul>
+<ul>
+<li><p>Bottle: </p>
+<p>Bottle is another prominent micro-framework. It was initially developed for building Web APIs, which is still an excellent use case for it. What is more <strong>intriguing</strong> about Bottle is that it tries to execute everything in one single document, which should give you a brief idea of how micro it is designed to be.</p>
+<p>Bottle 是另一个主流的微型框架。它从一开始就是为创建 Web API 而生，这也是它最好的使用案例。Bottle 更加<strong>奇妙</strong>的地方在于，它尝试使用一个单一的文件做所有的事情，这给我们一个重要的认识：它的设计是多么的 micro。</p>
+<p>The <strong>out-of-the-box</strong> functionalities include templating, routing, utilities, and some fundamental abstraction over the WSGI standard. Like Flask, you’ll be coding significantly nearer to the <strong>metal</strong> than with a full-stack system. Regardless of that, Bottle has been employed by Netflix to create Web interfaces.</p>
+<p>Bottle 包含一些<strong>开箱即用的</strong>功能包括 模板、路由、应用程序 和 一些在 WSGI 标准上的基础抽象。和 Flask 一样，有你的编码将更接近底层相比于全栈框架。尽管如此，Bottle 已经被 Netfilx 用于创建 Web 接口。</p>
+</li>
+</ul>
+<h2 id="Other-popular-frameworks"><a href="#Other-popular-frameworks" class="headerlink" title="Other popular frameworks"></a>Other popular frameworks</h2><h3 id="其他一些流行的框架"><a href="#其他一些流行的框架" class="headerlink" title="其他一些流行的框架"></a>其他一些流行的框架</h3><p>We’ve gone through some of the most widely used Python systems, yet there are a variety of options you could choose from. We’ll quickly take a look at a couple of others which could perform well in particular circumstances.</p>
+<p>我们已经介绍了许多广泛使用的 Python Web 框架，你可以从中有不同的选择。接下来将了解一些在特定情况下表现优良的其他框架。</p>
+<p><strong>Tornado</strong> is a Python Web framework particularly developed to tackle the C10k issue (i.e., it can deal with over 10,000 simultaneous connections if properly configured) using asynchronous I/O. This gives it solid appeal for projects that require <strong>elite</strong> and countless concurrent users.</p>
+<p>Tornado 是专为解决 <strong>C10k</strong> 问题而开发的 Python Web 框架。（在正确配置下，它能够通过异步 I/O 处理超过 10,000 并发连接数）这个对于那些需要高质量且大量并发用户的项目是一个巨大的吸引力。</p>
+<p><strong>CubicWeb</strong> is an intriguing Web framework that is entirely different from the other frameworks. It’s a piece of the <strong>semantic</strong> Web. In a <strong>layman</strong>’s <strong>terms</strong>（条款）, it’s a system that strives to display information in a way that is less demanding for PCs to get it. It replaces the model and view portion of MVC with a solitary concept – the data cube which can be used to develop different components, similar to Docker for the Web.</p>
+<p>CubicWeb 是一个奇妙的 Web 框架，它完全不同其他的 Web 框架。它是<strong>语义</strong> Web 的一种，用<strong>外行人</strong>的话将，它是一个通过减少对于电脑系统性能要求的方式来显示信息的系统。它使用一个单独的概念替代了 MVC 模型中的 model 和 view ，即数据块———能够由于开发不同的组件，有点像 Web 上的 Docker。</p>
+<p><strong>Phalcon</strong> is a micro-framework that is tied in with building cloud APIs. Like other micro-frameworks, it keeps minimal dependencies and maintains a strategic distance from complex features. However, unlike other systems, it wasn’t developed for serving HTML pages. Rather, it’s for building RESTful APIs quickly.</p>
+<p>Phalcon 是一个专注于创建云 API 的微型框架。和其他微型框架一样，它保持的较少的依赖，并且与复杂功能保持着一个明智的距离。但是，不同于其他框架，它不是为 HTML 的页面而开发的，而是，为更快的创建 RESTful API 而生。</p>
+<p>Even though Android has a remarkable SDK （Software Development Kit）out-of-the-box, the implementation of Python instead of Java is a huge advantage for website and app development (using Kivy) since it offers quicker turnaround times and the reuse of Python libraries.</p>
+<p>即便 Android 有非常优秀开箱即用的 SDK ，但使用 Python 实现替代 Java 实现有着巨大的好处，对于网站和应用开发（使用 Kivy 移动应用开发的 Python 开源库 ）。因为 Python 提供了更快的时间转化和库的复用。</p>
+<p>Python is a reliable and secure development language that is used for secure and <strong>agile</strong> Web app development. It is a standout amongst the available options, being the most dependable. It will reduce the development time spent trying to create a <strong>top-notch</strong> and robust Web app and site. You can consult with an experienced Python developer for your next project, for better guidance.</p>
+<p>Python 作为一个可靠、安全的开发语言，被用于安全<strong>敏捷</strong> Web 应用的开发。作为可靠备选中的佼佼者，它减少了<strong>顶尖</strong>稳定 Web 应用和网站的开发周期。你可以在开发你的下一个项目时，咨询有经验的 Python 开发人员，以得到更好的指导。</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
