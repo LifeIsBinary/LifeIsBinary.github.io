@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python-Web框架介绍 | Life Is Binary</title><meta name="keywords" content="open source,翻译"><meta name="author" content="Jack Wang"><meta name="copyright" content="Jack Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="针对 Python 中的 全栈框架（Django） 和 微型框架（Flask）行进介绍，对于一些应用特定场景的其他框架做简单的说明~ 英文原文：《A Complete Guide to Python Web Frameworks》作者：Premjith B P K 原文链接：https:&#x2F;&#x2F;opensourceforu.com&#x2F;2019&#x2F;04&#x2F;a-complete-guide-to-python-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python-Web框架介绍">
+<meta property="og:url" content="http://yoursite.com/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="Life Is Binary">
+<meta property="og:description" content="针对 Python 中的 全栈框架（Django） 和 微型框架（Flask）行进介绍，对于一些应用特定场景的其他框架做简单的说明~ 英文原文：《A Complete Guide to Python Web Frameworks》作者：Premjith B P K 原文链接：https:&#x2F;&#x2F;opensourceforu.com&#x2F;2019&#x2F;04&#x2F;a-complete-guide-to-python-">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/shenron_dragon_fantasy-wallpaper-1440x900.jpg">
+<meta property="article:published_time" content="2019-04-17T08:40:57.000Z">
+<meta property="article:modified_time" content="2019-04-17T14:16:58.617Z">
+<meta property="article:author" content="Jack Wang">
+<meta property="article:tag" content="open source">
+<meta property="article:tag" content="翻译">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/shenron_dragon_fantasy-wallpaper-1440x900.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python-Web框架介绍',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2019-04-17 22:16:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://raw.githubusercontent.com/LifeIsBinary/Picbed/main/weiChatIcon.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/shenron_dragon_fantasy-wallpaper-1440x900.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Life Is Binary</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Python-Web框架介绍</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-04-17T08:40:57.000Z" title="发表于 2019-04-17 16:40:57">2019-04-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-04-17T14:16:58.617Z" title="更新于 2019-04-17 22:16:58">2019-04-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>21分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Python-Web框架介绍"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>针对 Python 中的 全栈框架（Django） 和 微型框架（Flask）行进介绍，对于一些应用特定场景的其他框架做简单的说明~</p>
+<p>英文原文：《A Complete Guide to Python Web Frameworks》作者：Premjith B P K</p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://opensourceforu.com/2019/04/a-complete-guide-to-python-web-frameworks/">https://opensourceforu.com/2019/04/a-complete-guide-to-python-web-frameworks/</a></p>
+<span id="more"></span>
+
+
+
+
+
+<h1 id="A-Complete-Guide-to-Python-Web-Frameworks"><a href="#A-Complete-Guide-to-Python-Web-Frameworks" class="headerlink" title="A Complete Guide to Python Web Frameworks"></a>A Complete Guide to Python Web Frameworks</h1><h1 id="Python-Web-框架介绍"><a href="#Python-Web-框架介绍" class="headerlink" title="Python Web 框架介绍"></a>Python Web 框架介绍</h1><p>Web frameworks are code libraries that make Web development faster and easier. The <strong>versatile</strong> programming language, Python, has many Web frameworks like Django, Web2py, Flask, Bottle, etc. We take a closer look at these in this article.</p>
+<p>Web 框架就是一些函数库，通过使用这些库使得 Web 开发更加简单快捷。Python 作为<strong>多功能的</strong>编程语言，有许多 Web 框架，像 Django、Web2py、Flask 和 Bottle等等。接下来我们将来介绍这些框架的相关情况。</p>
+<p>Python is a valuable and flexible programming language designed specifically for teams trying to get a Web application up and running. Developers and frameworks are closely related since they are the building blocks of the products being <strong>crafted</strong>. With such frameworks, a set of solutions is born, thereby allowing the developer to focus more on the app logic rather than repetitive and other low-priority tasks.</p>
+<p>对于开发 Web 应用程序的团队，Python 是一种主流且非常灵活的编程语言。应用程序以一种模块化的开发模式进行<strong>开发</strong>，使得开发者和 Web 框架紧密的联系起来。调用框架中提供的大量的解决方案，使得开发者能够更加专注于应用程序的逻辑业务，不再为重复和低优先级的任务所扰。</p>
+<p>Nowadays, developers try Python’s <strong>robust</strong> collection of frameworks to deal with the details of the implementation, which helps to <strong>hasten</strong> the development and <strong>prototyping</strong> process. There are various well known Python Web frameworks out there – from vigorous full-stack frameworks specifically designed for enterprise based solutions to <strong>ultra-lightweight</strong> micro-frameworks streamlined for developing small and specialised tools.</p>
+<p>如今，开发者尝试使用<strong>强大功能的</strong> Python 框架去解决解决一些具体的实现细节，这个<strong>加速</strong>了<strong>原型</strong>设计和开发的进程。从针对企业的强大全栈框架到适合开发小型专业的工具的<strong>超轻量级</strong>微框架流，目前有各种各样的流行的 Python Web 框架。</p>
+<p>Python Web frameworks help in greatly cutting down the cost, the effort and the time spent on Web app development. We will share some key functionalities of these <strong>intriguing</strong> frameworks to help you during Web application development. In this article we aim to help you settle on the best framework, based on your needs.</p>
+<p>Python Web 框架在很大程度上削减了 Web 应用开发的成本、人力和时间周期。我们将分享这些<strong>流行</strong>框架中一些重要功能点，帮助在你开发 Web 应用程序中做的更好。我们希望能够帮助你确定针对自己实际需求的最合适框架。</p>
+<h2 id="What-are-Web-frameworks"><a href="#What-are-Web-frameworks" class="headerlink" title="What are Web frameworks?"></a>What are Web frameworks?</h2><h3 id="框架的作用"><a href="#框架的作用" class="headerlink" title="框架的作用"></a>框架的作用</h3><p>Web frameworks enable developers to create Web applications and services without getting into the details like sockets, protocols, thread management, etc. Some of the common duties of a Web framework are to handle cookies, get form parameters, deal with sessions, etc. There are two main types of frameworks available – the full-stack and the micro-framework.</p>
+<p>Web 框架使得开发者不需要去关注 Socket、协议 和 线程管理 等细节，专注于 Web 应用程序和服务的开发。框架的完成的大部分职责集中于 cookies 的处理、参数的获取以及 session 的处理等。主流的 Web 框架分为两大类：全栈框架 和 微型框架。</p>
+<h2 id="Full-stack-or-micro-framework"><a href="#Full-stack-or-micro-framework" class="headerlink" title="Full-stack or micro-framework?"></a>Full-stack or micro-framework?</h2><h3 id="选择全栈框架还是微型框架"><a href="#选择全栈框架还是微型框架" class="headerlink" title="选择全栈框架还是微型框架"></a>选择全栈框架还是微型框架</h3><p>You should be extremely focused while picking a framework, and the key things to consider should be the size and <strong>sophistication</strong> of the project. In case you’re hoping to get a function-oriented Web application that will collaborate with <strong>the rest of</strong> your <strong>association</strong>’s frameworks, then a full-stack alternative could help your team both in terms of time and effort. However, if you’re working on a small and relatively simple project with minimal requirements, a micro-framework is your best bet. A related question is: how much effort will you require from the framework? A full-stack Web framework should have all the components you require to develop a fully functional Web app – frame generators, access lists, templating, etc – so your team can assemble the page or app as per requirements. This is an <strong>alluring</strong> option for teams that are attempting to build a product quickly, since it enables them to focus only on the development of the app and not everything else that revolves around it. In any case, if you have sophisticated custom requirements or are already working with different types of custom software, you can’t exploit those libraries.</p>
+<p>当你在框架选择时，你应该将项目规模和<strong>复杂</strong>性作为考虑的重要因素。如果你希望应用的开发以业务功能为主，需要与<strong>其他的</strong>周边框架协作，全栈框架的选择将能够减少整个团队在开发时间和开发任务。但是，如果你在开发一个小型、简单需求的少的项目时，微型框架是你最好的选择。另一个需要考虑的问题是：你需要框架帮你完成多少事情？全栈 Web 框架包含了开发一个功能丰富 Web 应用的所有组件—框架生成器、访问列表和模板等。这使得你的团队能根据不同的需求创建出相应的页面和应用。对于希望快速开发出产品的团队这是一个很好的选择，因为这是使得他们更加专注于应用的开发而不是与之相关的周边事情。如果你有复杂的个性化需求或者已经在开发多种不同类型的定制化的软件，不管在什么情况下，你都不应该使用这些框架。</p>
+<h2 id="Full-stack-frameworks"><a href="#Full-stack-frameworks" class="headerlink" title="Full-stack frameworks"></a>Full-stack frameworks</h2><h3 id="全栈框架"><a href="#全栈框架" class="headerlink" title="全栈框架"></a>全栈框架</h3><p>There are a whole new set of full-stack options available among Python frameworks. Some of the prominent frameworks are TurboGears 2, Pylons, and Web2py. But the most popular one among them is Django.</p>
+<p>有许多新且完备的全栈 web Python框架选择方案：如主流的框架 TurboGears 2、Pylons 和 Web2py。但是其中最流行的是 Django。</p>
+<ul>
+<li><p>Django</p>
+<p>This is the most well-known Python framework and anyone can easily justify the reason behind it. A huge number of websites already use Django, from publishing houses to social media and sharing sites to significant <strong>establishments</strong> and non-profits. Since Django was initially developed for use in the newsroom, it’s not a big deal that dailies like the Washington Post and <strong>The Guardian</strong> work on this framework. New companies and startups like Eventbrite and Disqus have migrated to Django to improve conversion rates, while social media giants like Instagram and Pinterest have used it to control their dynamic Web apps.</p>
+<p>Django 是流程的 Python 框架，至于具体的原因大家不难理解。大量的网站使用了 Django，从出版社到社交媒体和分享网站，再到重要的<strong>机构</strong>和非盈利组织。由于 Django 最初开发于编辑部门，因此 华盛顿邮报 和 <strong>卫报</strong> 运行在该框架上也不是意外。一些新公司和初创公司像 Eventbrite 和 Disqus 已经在往 Django 迁移并且在提高完成度。同时社交巨头 Instagram 和 Pinterest 已经使用该框架去开发他们的动态 Web 应用。 </p>
+<p>When considered as a framework, Django is known for being quick to build and friendly for <strong>amateur</strong> developers. It’s a ‘<strong>batteries</strong> （电池）included’ framework, which means it supplies all the basic components you require such as authentication, rendering template, ORM, routing, etc. It’s also well documented, which isn’t the case with some other mainstream Web frameworks.</p>
+<p>当考虑到框架时，Django 以快速开发 和 对业务开发者友好 而著称。作为一种“可插拔式”的框架，它提供了所有你需要的基础的组件 认证、可渲染模板、ORM 和路由等。相比于其他的主流 Web 框架，它有良好的技术文档。</p>
+<p>Django can considerably reduce the time taken to bootstrap a new project by dealing with a lot of choices. However, what you gain in speed can be lost in long-term flexibility. For instance, the inbuilt ORM of Django works efficiently in major <strong>scenarios</strong>. However, it’s not as <strong>ground breaking</strong>（破土动工） as SQLAlchemy, which is also <strong>termed</strong> the best Python database abstraction tool. While you can <strong>hypothetically</strong> use SQLAlchemy with Django, you’ll lose out on some major functionalities that make Django so appealing to start with.</p>
+<p>通过对大量选择的处理，Django 能够在很大程度上减少新项目的引导时间。但是，在获得速度的同时也牺牲了长期开发维护的灵活性。例如，Django 内置的 ORM 在大部分<strong>情况</strong>下效果显著。但是，它无法像<strong>被称为</strong>最好的 Python 数据库抽象工具 SQLAlchemy那样有突破性。你可以想象在 Django 下使用 SQLAlchemy，但是那样你讲失去 Django 中的一些一开始就吸引人的重要功能。</p>
+</li>
+</ul>
+<ul>
+<li><p>Web2py</p>
+<p>This is another prominent full-stack framework. One thing to remember about Web2py is that it isn’t compatible with Python 3. The original developers behind Web2py have guaranteed a compatible successor for Python 3, but haven’t launched it till now.</p>
+<p>Web2py 是另一个主流的全栈框架。需要牢记的是 Web2py 不兼容 Python3。虽然 Web2py 的早期开发者已经保证会去开发兼容 Python3 的新版，但时至今日依然没有新版依然没有正式发布。</p>
+<p>Even though it is ten years behind the most recent version of Python, Web2py is still used by many major enterprises, including <strong>multinational</strong> banks. What makes this older Web framework still engaging for developers is its unique functionalities. For one, it’s as simple and easy to learn as Django, and is more flexible and portable too. The same code can be employed for almost any <strong>VPS</strong>（Virtual Private Servers） with a SQL database or MongoDB, regardless of whether AWS or Google App Engine are used.</p>
+<p>即便相较目前最新发布的 Python 版本已经十年时间了，Web2py 依然在许多大型企业中使用，其中就包括<strong>跨国</strong>银行。使得这个老 Web 框架依然有许多开发者在使用的原因，是他独一无二的功能。一方面，它即能够像 Django 一样简单易学习，又兼具灵活性和可扩展能力。不管是 AWS 还是 Google App Engine 中 VPS， 同样的一段代码几乎可以应用到 所用的使用 SQL  或者 Mongo DB 的 VPS 中 。</p>
+<p>Web2py has got <strong>intense</strong> support — it is well-documented and has a strong community behind it. Another perfect element is that Web2py is accompanied by its very own <strong>IDE</strong>（ Integrated Developer Editor） that incorporates a code editor, debugger, bug ticketing framework, a single tick deployment, etc. If your organisation is focused on Python 2 for the coming years or you intend to make use of some more established Python libraries and software, then Web2py could perfectly suit your requirements.</p>
+<p>Web2py 有优秀的文档手册和活跃的社区在其背后作为<strong>强大的</strong>支持。另一个亮点在于 Web2py 有自己的IDE，其中包含了 代码编辑器、调试器、bug 票务框架 和 单独的票务部署功能等等。如果你的团队在未来几年中开发以 Python2 为主，或者希望充分利用已有的众多 Python 库和应用，那么 Web2py 框架非常符合你的要求。</p>
+</li>
+<li><p>Pyramid</p>
+<p>Pyramid isn’t exactly a full-stack framework but bills（账单） itself as the Goldilocks framework. Pyramid is enriched with features without forcing any particular way of getting things done on users. It is lightweight without leaving you all alone as your app develops. It’s one of the most loved Web frameworks among experienced Python developers on account of its <strong>transparency</strong> and modularity, and has been used by both <strong>moderately</strong> sized teams as well as tech giants like Mozilla, Yelp, SurveyMonkey and Dropbox.</p>
+<p>Pyramid 确切的来说不是一个全栈的 Web 框架，并且自称是符合“金发姑娘”原则（<strong>适度原则</strong>）的框架。Pyramid 有这丰富的特性不会限制使用某种特定的方式去处理事情。作为一种轻量级的框架，不会使你随着应用的开发陷入独自一人的窘境。由于良好的<strong>通透性</strong>和模块化，Pyramid 是 Python 老鸟最喜爱的开发框架。不仅中等规模的团队在使用，像 Mozilla、Yelp、SurveyMonkey 和 Dropbox 这样的科技巨头也在使用。</p>
+<p>In reality, almost every component of a Pyramid framework can be <strong>swapped</strong> out. You can pick how you interface with a database, or even what type (or types) of databases you want to connect with. It doesn’t <strong>authorise</strong> certain choices for you like Django does, and it also <strong>discourages</strong> some ‘magic’ features which handle certain assignments automatically. It also doesn’t behave in an <strong>anticipated</strong> or attractive way.</p>
+<p>事实上，Pyramid 框架中几乎所有的组件都能够替换掉。你能够使用你的数据库接口，甚者连接任何你想要连接的数据库。它不会像Django那样授权处理具体的选择，也不鼓励自动化处理具体任务的奇妙功能。这使得它不会表现预期的或者吸引人的方式。</p>
+<p>Pyramid is popular because of its security solutions, which make it simple to set up and to check access control records. Another innovative functionality worth mentioning is Pyramid’s Traversal system for mapping URLs to code, which eventually makes it easy to build RESTful APIs.</p>
+<p>Pyramid 流程的原因是它安全的解决方案，使得访问控制记录的创建和检查变得简单。另一个值得关注的创新功能是 Pyramid 的从 URL 到 code 的映射的路由系统，这使得最终创建 RESTful 接口变得容易。</p>
+</li>
+</ul>
+<h2 id="Micro-frameworks"><a href="#Micro-frameworks" class="headerlink" title="Micro-frameworks"></a>Micro-frameworks</h2><h3 id="微型框架"><a href="#微型框架" class="headerlink" title="微型框架"></a>微型框架</h3><p>Consider the possibility that you don’t need handholding or the sophistication of a full-stack framework. Nowadays, modern Web apps require lots of moving parts, including database abstraction, frame approval and modified access control records. But there are a lot of Web applications that don’t require any of it. For such projects, a micro-framework might be exactly what’s required.</p>
+<p>考虑到你可能不需要全面和丰富的全栈框架。如今，新一代的 Web 应用需要许多可以插拔的部分，包括数据库抽象层，框架认证 和 可配置的访问控制规则。但是也有大部分的 Web 应用不要这些模块。对于这种项目，微型框架应该是最需要的。</p>
+<p>These ultra-lightweight frameworks are developed to get dead Web apps up and running as fast as possible. Their capabilities are minimal by design– any functionality you could get by installing another library is intentionally left out. An advantage of working with this moderate approach is that your code can be cleaner and the site quicker. This is because micro-frameworks are less abstracted than full-stack structures. The code you compose will be significantly closer to HTTP capacities than with a more beginner-friendly framework.</p>
+<p>这些超轻量级的应用被开发的目的是使得一些死掉的 Web 应用重新能被使用并且尽可能的运行的更快。他们的设计的功能精简—————— 对一些能通过安装一些其他的库满足的功能专门进行了移除。使用这些透明的方法的好处是使你的代码更加的简洁清晰，并且网站运行速度更快。这就是为什么微型框架没有全栈框架那么抽象。相比于对初学者友好的 Web 框架，你编写的代码将需要触及HTTP 的一些功能。</p>
+<ul>
+<li><p>Flask: </p>
+<p>Flask is undoubtedly the most famous micro-framework for Python and a standout amongst the most well-known Python structures, period. Like Django, it was developed to get Web applications up and running as fast and effortlessly as possible. Regardless of its <strong>tiny</strong> size, Flask has been used by huge organisations, including LinkedIn and Pinterest.</p>
+<p>Flask 无疑是最有名的 Python 微型框架，并且一直是最有名的 Python 结构中的佼佼者。和 Django 一样，开发 Flask 的目的是使得 Web 应用开发并尽可能运行的更快。虽然是微型框架，但 Flask 已经被一些大公司所使用，其中包括 LinkedIn 和 Pinterest。</p>
+<p>In any case, here’s the twist – since Flask is ideal for smaller, easier projects than Django, you can expect Web server development, support for Google App Engine and inbuilt unit testing. There is no database abstraction layer, form verification and validation, and auto upload features are disabled. However, every one of these features can be included via extensions. Some key setups incorporate SQLAlchemy for the database or Jinja2 for templating and CouchDB.</p>
+<p>无论如何，这是个较量。相比 Django，Flask是那些又小又简单项目的理想选择。因此，你可以期待 Web 服务器开发将支持 Google App Engine 并且 内置单元测试功能。Flask 不支持 数据库抽象层 和 表单验证，且自动上传的功能被禁用。但是，每一个这些功能都能够通过外部扩展来实现。例如一些主要的扩展包括 SQLAlchemy 数据库 、 Jinja2 模板和 CouchDB。</p>
+<p>Some Python designers opt for Flask rather than Django <strong>on the grounds that</strong> the former is increasingly pythonic, in that, it generally <strong>adheres</strong>（依附） to the Python <strong>mantra</strong>（口头禅） of there being one approach to accomplish something, and that code ought to be clear about what it’s doing. In case you prefer clean code <strong>from scratch</strong>, Flask might be a <strong>decent</strong> alternative.</p>
+<p>一些 Python 开发者会选择 Flask 而非 Django ，<strong>因为</strong>前者越来越 Pythonic。这更加符合 Pytho 之<strong>禅</strong>的原则：一种方式完成事情，并且相应的代码能够表明在做什么。如果你非常想要从头开始使代码更加简洁明了，Flask 应该是你合适的选择。</p>
+</li>
+<li><p>Bottle: </p>
+<p>Bottle is another prominent micro-framework. It was initially developed for building Web APIs, which is still an excellent use case for it. What is more <strong>intriguing</strong> about Bottle is that it tries to execute everything in one single document, which should give you a brief idea of how micro it is designed to be.</p>
+<p>Bottle 是另一个主流的微型框架。它从一开始就是为创建 Web API 而生，这也是它最好的使用案例。Bottle 更加<strong>奇妙</strong>的地方在于，它尝试使用一个单一的文件做所有的事情，这给我们一个重要的认识：它的设计是多么的 micro。</p>
+<p>The <strong>out-of-the-box</strong> functionalities include templating, routing, utilities, and some fundamental abstraction over the WSGI standard. Like Flask, you’ll be coding significantly nearer to the <strong>metal</strong> than with a full-stack system. Regardless of that, Bottle has been employed by Netflix to create Web interfaces.</p>
+<p>Bottle 包含一些<strong>开箱即用的</strong>功能包括 模板、路由、应用程序 和 一些在 WSGI 标准上的基础抽象。和 Flask 一样，有你的编码将更接近底层相比于全栈框架。尽管如此，Bottle 已经被 Netfilx 用于创建 Web 接口。</p>
+</li>
+</ul>
+<h2 id="Other-popular-frameworks"><a href="#Other-popular-frameworks" class="headerlink" title="Other popular frameworks"></a>Other popular frameworks</h2><h3 id="其他一些流行的框架"><a href="#其他一些流行的框架" class="headerlink" title="其他一些流行的框架"></a>其他一些流行的框架</h3><p>We’ve gone through some of the most widely used Python systems, yet there are a variety of options you could choose from. We’ll quickly take a look at a couple of others which could perform well in particular circumstances.</p>
+<p>我们已经介绍了许多广泛使用的 Python Web 框架，你可以从中有不同的选择。接下来将了解一些在特定情况下表现优良的其他框架。</p>
+<p><strong>Tornado</strong> is a Python Web framework particularly developed to tackle the C10k issue (i.e., it can deal with over 10,000 simultaneous connections if properly configured) using asynchronous I/O. This gives it solid appeal for projects that require <strong>elite</strong> and countless concurrent users.</p>
+<p>Tornado 是专为解决 <strong>C10k</strong> 问题而开发的 Python Web 框架。（在正确配置下，它能够通过异步 I/O 处理超过 10,000 并发连接数）这个对于那些需要高质量且大量并发用户的项目是一个巨大的吸引力。</p>
+<p><strong>CubicWeb</strong> is an intriguing Web framework that is entirely different from the other frameworks. It’s a piece of the <strong>semantic</strong> Web. In a <strong>layman</strong>’s <strong>terms</strong>（条款）, it’s a system that strives to display information in a way that is less demanding for PCs to get it. It replaces the model and view portion of MVC with a solitary concept – the data cube which can be used to develop different components, similar to Docker for the Web.</p>
+<p>CubicWeb 是一个奇妙的 Web 框架，它完全不同其他的 Web 框架。它是<strong>语义</strong> Web 的一种，用<strong>外行人</strong>的话将，它是一个通过减少对于电脑系统性能要求的方式来显示信息的系统。它使用一个单独的概念替代了 MVC 模型中的 model 和 view ，即数据块———能够由于开发不同的组件，有点像 Web 上的 Docker。</p>
+<p><strong>Phalcon</strong> is a micro-framework that is tied in with building cloud APIs. Like other micro-frameworks, it keeps minimal dependencies and maintains a strategic distance from complex features. However, unlike other systems, it wasn’t developed for serving HTML pages. Rather, it’s for building RESTful APIs quickly.</p>
+<p>Phalcon 是一个专注于创建云 API 的微型框架。和其他微型框架一样，它保持的较少的依赖，并且与复杂功能保持着一个明智的距离。但是，不同于其他框架，它不是为 HTML 的页面而开发的，而是，为更快的创建 RESTful API 而生。</p>
+<p>Even though Android has a remarkable SDK （Software Development Kit）out-of-the-box, the implementation of Python instead of Java is a huge advantage for website and app development (using Kivy) since it offers quicker turnaround times and the reuse of Python libraries.</p>
+<p>即便 Android 有非常优秀开箱即用的 SDK ，但使用 Python 实现替代 Java 实现有着巨大的好处，对于网站和应用开发（使用 Kivy 移动应用开发的 Python 开源库 ）。因为 Python 提供了更快的时间转化和库的复用。</p>
+<p>Python is a reliable and secure development language that is used for secure and <strong>agile</strong> Web app development. It is a standout amongst the available options, being the most dependable. It will reduce the development time spent trying to create a <strong>top-notch</strong> and robust Web app and site. You can consult with an experienced Python developer for your next project, for better guidance.</p>
+<p>Python 作为一个可靠、安全的开发语言，被用于安全<strong>敏捷</strong> Web 应用的开发。作为可靠备选中的佼佼者，它减少了<strong>顶尖</strong>稳定 Web 应用和网站的开发周期。你可以在开发你的下一个项目时，咨询有经验的 Python 开发人员，以得到更好的指导。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Jack Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/">http://yoursite.com/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com" target="_blank">Life Is Binary</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/open-source/">open source</a><a class="post-meta__tags" href="/tags/%E7%BF%BB%E8%AF%91/">翻译</a></div><div class="post_share"><div class="social-share" data-image="/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/shenron_dragon_fantasy-wallpaper-1440x900.jpg" data-sites="wechat,weibo,qq,douban"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/04/18/DevOps%E6%98%AF%E4%BB%80%E4%B9%88-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81DevOps/"><img class="prev-cover" src="/2019/04/18/DevOps%E6%98%AF%E4%BB%80%E4%B9%88-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81DevOps/sci_fi-wallpaper-1440x900.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">DevOps是什么?为什么我们需要DevOps?</div></div></a></div><div class="next-post pull-right"><a href="/2019/04/16/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%9C%A8%E4%B8%8D%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%81%9A%E5%BC%80%E6%BA%90/"><img class="next-cover" src="/2019/04/16/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%9C%A8%E4%B8%8D%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%81%9A%E5%BC%80%E6%BA%90/battlefield_warrior_horse_running_smoke_illustration-wallpaper-1440x900.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">如何通过在不写代码的情况下做开源</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/04/18/DevOps是什么-为什么我们需要DevOps/" title="DevOps是什么?为什么我们需要DevOps?"><img class="cover" src="/2019/04/18/DevOps%E6%98%AF%E4%BB%80%E4%B9%88-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81DevOps/sci_fi-wallpaper-1440x900.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-04-18</div><div class="title">DevOps是什么?为什么我们需要DevOps?</div></div></a></div><div><a href="/2019/04/16/如何通过在不写代码的情况下做开源/" title="如何通过在不写代码的情况下做开源"><img class="cover" src="/2019/04/16/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%9C%A8%E4%B8%8D%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%81%9A%E5%BC%80%E6%BA%90/battlefield_warrior_horse_running_smoke_illustration-wallpaper-1440x900.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-04-16</div><div class="title">如何通过在不写代码的情况下做开源</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/LifeIsBinary/Picbed/main/weiChatIcon.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jack Wang</div><div class="author-info__description">Pligram</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LifeIsBinary" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:lifeisbinary@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#A-Complete-Guide-to-Python-Web-Frameworks"><span class="toc-number">1.</span> <span class="toc-text">A Complete Guide to Python Web Frameworks</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-Web-%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">Python Web 框架介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-are-Web-frameworks"><span class="toc-number">2.1.</span> <span class="toc-text">What are Web frameworks?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.1.1.</span> <span class="toc-text">框架的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Full-stack-or-micro-framework"><span class="toc-number">2.2.</span> <span class="toc-text">Full-stack or micro-framework?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%85%A8%E6%A0%88%E6%A1%86%E6%9E%B6%E8%BF%98%E6%98%AF%E5%BE%AE%E5%9E%8B%E6%A1%86%E6%9E%B6"><span class="toc-number">2.2.1.</span> <span class="toc-text">选择全栈框架还是微型框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Full-stack-frameworks"><span class="toc-number">2.3.</span> <span class="toc-text">Full-stack frameworks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E6%A0%88%E6%A1%86%E6%9E%B6"><span class="toc-number">2.3.1.</span> <span class="toc-text">全栈框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Micro-frameworks"><span class="toc-number">2.4.</span> <span class="toc-text">Micro-frameworks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%9E%8B%E6%A1%86%E6%9E%B6"><span class="toc-number">2.4.1.</span> <span class="toc-text">微型框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other-popular-frameworks"><span class="toc-number">2.5.</span> <span class="toc-text">Other popular frameworks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E6%B5%81%E8%A1%8C%E7%9A%84%E6%A1%86%E6%9E%B6"><span class="toc-number">2.5.1.</span> <span class="toc-text">其他一些流行的框架</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/03/29/%E6%9C%BA%E8%AF%95%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%8A%9F/" title="机试——字符串、排序与查找"><img src="https://raw.githubusercontent.com/LifeIsBinary/Picbed/main/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机试——字符串、排序与查找"/></a><div class="content"><a class="title" href="/2020/03/29/%E6%9C%BA%E8%AF%95%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%8A%9F/" title="机试——字符串、排序与查找">机试——字符串、排序与查找</a><time datetime="2020-03-29T10:58:29.000Z" title="发表于 2020-03-29 18:58:29">2020-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/03/29/%E6%9C%BA%E8%AF%95-%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98/" title="机试--数学问题"><img src="https://raw.githubusercontent.com/LifeIsBinary/Picbed/main/background.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机试--数学问题"/></a><div class="content"><a class="title" href="/2020/03/29/%E6%9C%BA%E8%AF%95-%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98/" title="机试--数学问题">机试--数学问题</a><time datetime="2020-03-29T07:57:25.000Z" title="发表于 2020-03-29 15:57:25">2020-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2019/04/18/DevOps%E6%98%AF%E4%BB%80%E4%B9%88-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81DevOps/" title="DevOps是什么?为什么我们需要DevOps?"><img src="/2019/04/18/DevOps%E6%98%AF%E4%BB%80%E4%B9%88-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81DevOps/sci_fi-wallpaper-1440x900.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DevOps是什么?为什么我们需要DevOps?"/></a><div class="content"><a class="title" href="/2019/04/18/DevOps%E6%98%AF%E4%BB%80%E4%B9%88-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81DevOps/" title="DevOps是什么?为什么我们需要DevOps?">DevOps是什么?为什么我们需要DevOps?</a><time datetime="2019-04-18T09:53:41.000Z" title="发表于 2019-04-18 17:53:41">2019-04-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/" title="Python-Web框架介绍"><img src="/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/shenron_dragon_fantasy-wallpaper-1440x900.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python-Web框架介绍"/></a><div class="content"><a class="title" href="/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/" title="Python-Web框架介绍">Python-Web框架介绍</a><time datetime="2019-04-17T08:40:57.000Z" title="发表于 2019-04-17 16:40:57">2019-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2019/04/16/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%9C%A8%E4%B8%8D%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%81%9A%E5%BC%80%E6%BA%90/" title="如何通过在不写代码的情况下做开源"><img src="/2019/04/16/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%9C%A8%E4%B8%8D%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%81%9A%E5%BC%80%E6%BA%90/battlefield_warrior_horse_running_smoke_illustration-wallpaper-1440x900.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何通过在不写代码的情况下做开源"/></a><div class="content"><a class="title" href="/2019/04/16/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E5%9C%A8%E4%B8%8D%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%E5%81%9A%E5%BC%80%E6%BA%90/" title="如何通过在不写代码的情况下做开源">如何通过在不写代码的情况下做开源</a><time datetime="2019-04-16T01:49:12.000Z" title="发表于 2019-04-16 09:49:12">2019-04-16</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/2019/04/17/Python-Web%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D/shenron_dragon_fantasy-wallpaper-1440x900.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 By Jack Wang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
