@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>机器人仿真平台——Webots使用的一些背景信息 | Life Is Binary</title><meta name="keywords" content="webots,ROS仿真"><meta name="author" content="Jack"><meta name="copyright" content="Jack"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最近做实验，需要使用webots仿真平台。记录一下webots中的一些概念和常用的操作。 一些概念 world：整个你可以看见的仿真环境，包括机器人和机器人所在的场景，以.wbt为扩展名，存储在world文件目录中。 controller：控制仿真环境中虚拟机器人的控制器，可以是C++、python、java、matlab等语言编写，放置在每个Webots项目的“ controllers”子目录中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器人仿真平台——Webots使用的一些背景信息">
+<meta property="og:url" content="https://lifeisbinary.github.io/2021/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94Webots%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF/index.html">
+<meta property="og:site_name" content="Life Is Binary">
+<meta property="og:description" content="最近做实验，需要使用webots仿真平台。记录一下webots中的一些概念和常用的操作。 一些概念 world：整个你可以看见的仿真环境，包括机器人和机器人所在的场景，以.wbt为扩展名，存储在world文件目录中。 controller：控制仿真环境中虚拟机器人的控制器，可以是C++、python、java、matlab等语言编写，放置在每个Webots项目的“ controllers”子目录中">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/166e6d00-c507-11ea-84e7-c2a3f51f8996.png">
+<meta property="article:published_time" content="2021-08-03T13:54:29.000Z">
+<meta property="article:modified_time" content="2021-08-03T13:58:53.551Z">
+<meta property="article:author" content="Jack">
+<meta property="article:tag" content="webots">
+<meta property="article:tag" content="ROS仿真">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/166e6d00-c507-11ea-84e7-c2a3f51f8996.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/blogIcon.png"><link rel="canonical" href="https://lifeisbinary.github.io/2021/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94Webots%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="LSyTZ5bzZY2Vg6lZXS1Qa1008wPY9-QhDE67ar1Xqig"/><meta name="baidu-site-verification" content="code-p8ou8Pog9O"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '机器人仿真平台——Webots使用的一些背景信息',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-08-03 21:58:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/weiChatIcon.JPG" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/166e6d00-c507-11ea-84e7-c2a3f51f8996.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Life Is Binary</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">机器人仿真平台——Webots使用的一些背景信息</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-03T13:54:29.000Z" title="发表于 2021-08-03 21:54:29">2021-08-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-03T13:58:53.551Z" title="更新于 2021-08-03 21:58:53">2021-08-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">656</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="机器人仿真平台——Webots使用的一些背景信息"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>最近做实验，需要使用webots仿真平台。记录一下webots中的一些概念和常用的操作。</p>
+<h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ul>
+<li>world：整个你可以看见的仿真环境，包括机器人和机器人所在的场景，以.wbt为扩展名，存储在world文件目录中。</li>
+<li>controller：控制仿真环境中虚拟机器人的控制器，可以是C++、python、java、matlab等语言编写，放置在每个Webots项目的“ controllers”子目录中。</li>
+<li>motion：定义的一些列的虚拟机器人动作，比如，前进，后退，左转、右转，握手等等。</li>
+</ul>
+<hr>
+<ul>
+<li><p>场景树：描述整个仿真环境的一种结构,如下图：<img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803200917964.png" alt="image-20210803200917964"></p>
+<ul>
+<li>WorldInfo：包含模拟的全局参数。</li>
+<li>Viewpoint：定义主要视点相机参数。</li>
+<li>TexturedBackground：定义场景的背景。</li>
+<li>TexturedBackroundLight：定义与上述背景关联的光。</li>
+<li>RectangleArena：定义场景中的方形棋盘。</li>
+<li>WoodBox：定义场景中的三个木箱。</li>
+</ul>
+<p>每个节点都是场景中的元素，可以改元素下的属性(物体的大小、墙体的厚度、物体的位置等)，来调整仿真环境。</p>
+</li>
+</ul>
+<h2 id="world的操作查看方式"><a href="#world的操作查看方式" class="headerlink" title="world的操作查看方式"></a>world的操作查看方式</h2><p>使用鼠标在3D视图中移动视点：</p>
+<ul>
+<li><p>视图旋转：左按钮移动</p>
+</li>
+<li><p>视图平移：右按钮移动</p>
+</li>
+<li><p>视图缩放：滚轮</p>
+</li>
+<li><p>物体位置调整——移动：选中物体，鼠标移动到物体的坐标轴箭头处，可以激活当前该轴向的物体位置调节功能。拖过鼠标可以调节物体位置。<img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803202027162.png" alt="image-20210803202027162"></p>
+</li>
+<li><p>物体姿态调整——转动：同理。选中物体，鼠标移动到物体的转动坐标轴处，可激活当前该转轴向的物体姿态调节功能。鼠标拖动可以调节物体姿态。</p>
+</li>
+</ul>
+<p>当然，最方便的还是选中物体，<code>shift+鼠标左键移动</code>来将物体移动到某位置位置，<code>shift+鼠标右键移动</code> 来控制物体的旋转。</p>
+<h2 id="你需要做的事情"><a href="#你需要做的事情" class="headerlink" title="你需要做的事情"></a>你需要做的事情</h2><ol>
+<li>搭建wrold（环境 + 机器人 + 物体等）</li>
+<li>编写控制机器人的控制器controller，来完成你需要实现的机器人行为功能。</li>
+<li>设置机器人的控制器为你写好的controller。设置方式如下图<img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803205502071.png" alt="image-20210803205502071"></li>
+</ol>
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ul>
+<li>修改Webots world保存时，首先要暂停模拟并将其重新加载到初始状态,即主虚拟计时器应显示0：00：00：000。否则，每次保存时，每个3D对象的位置都会累积错误。因此，对wrold的修改都应按以下顺序执行：暂停，重置，修改和保存仿真。</li>
+</ul>
+<h2 id="webots教程"><a href="#webots教程" class="headerlink" title="webots教程"></a>webots教程</h2><p>推荐csdn博主<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41045354/article/details/105072630">“我是。”的教程</a> 和<a target="_blank" rel="noopener" href="https://rupingcen.blog.csdn.net/article/details/106396478">“熊猫飞天”的教程</a><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803212647750.png" alt="image-20210803212647750"><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803214508910.png" alt="image-20210803214508910"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Jack</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://lifeisbinary.github.io/2021/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94Webots%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF/">https://lifeisbinary.github.io/2021/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94Webots%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://lifeisbinary.github.io" target="_blank">Life Is Binary</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/webots/">webots</a><a class="post-meta__tags" href="/tags/ROS%E4%BB%BF%E7%9C%9F/">ROS仿真</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/166e6d00-c507-11ea-84e7-c2a3f51f8996.png" data-sites="wechat,weibo,qq,douban"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/01/%E9%9D%9E%E4%BE%B5%E5%85%A5%E5%BC%8F%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E8%90%BD%E5%9C%B0%E6%83%85%E5%86%B5%E6%8A%A5%E5%91%8A/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/AwardBlurbHeader.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">非侵入式脑机接口落地情况报告</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/weiChatIcon.JPG" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jack</div><div class="author-info__description">Pligram</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LifeIsBinary"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LifeIsBinary" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:lifeisbinary@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">一些笔记～</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">一些概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#world%E7%9A%84%E6%93%8D%E4%BD%9C%E6%9F%A5%E7%9C%8B%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">world的操作查看方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%A0%E9%9C%80%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85"><span class="toc-number">3.</span> <span class="toc-text">你需要做的事情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tips"><span class="toc-number">4.</span> <span class="toc-text">tips</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webots%E6%95%99%E7%A8%8B"><span class="toc-number">5.</span> <span class="toc-text">webots教程</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94Webots%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF/" title="机器人仿真平台——Webots使用的一些背景信息"><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/166e6d00-c507-11ea-84e7-c2a3f51f8996.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机器人仿真平台——Webots使用的一些背景信息"/></a><div class="content"><a class="title" href="/2021/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94Webots%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF/" title="机器人仿真平台——Webots使用的一些背景信息">机器人仿真平台——Webots使用的一些背景信息</a><time datetime="2021-08-03T13:54:29.000Z" title="发表于 2021-08-03 21:54:29">2021-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/01/%E9%9D%9E%E4%BE%B5%E5%85%A5%E5%BC%8F%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E8%90%BD%E5%9C%B0%E6%83%85%E5%86%B5%E6%8A%A5%E5%91%8A/" title="非侵入式脑机接口落地情况报告"><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/AwardBlurbHeader.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="非侵入式脑机接口落地情况报告"/></a><div class="content"><a class="title" href="/2021/08/01/%E9%9D%9E%E4%BE%B5%E5%85%A5%E5%BC%8F%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E8%90%BD%E5%9C%B0%E6%83%85%E5%86%B5%E6%8A%A5%E5%91%8A/" title="非侵入式脑机接口落地情况报告">非侵入式脑机接口落地情况报告</a><time datetime="2021-08-01T01:24:48.000Z" title="发表于 2021-08-01 09:24:48">2021-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/31/Zoella-Cooking%E7%AC%94%E8%AE%B0%E4%B9%8B%E2%80%94%E2%80%94%E7%AE%80%E9%A4%90%E6%8C%82%E9%9D%A2/" title="Zoella Cooking笔记之——简餐挂面"><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/noodles.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Zoella Cooking笔记之——简餐挂面"/></a><div class="content"><a class="title" href="/2021/07/31/Zoella-Cooking%E7%AC%94%E8%AE%B0%E4%B9%8B%E2%80%94%E2%80%94%E7%AE%80%E9%A4%90%E6%8C%82%E9%9D%A2/" title="Zoella Cooking笔记之——简餐挂面">Zoella Cooking笔记之——简餐挂面</a><time datetime="2021-07-31T12:15:47.000Z" title="发表于 2021-07-31 20:15:47">2021-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/03/29/%E6%9C%BA%E8%AF%95%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%8A%9F/" title="机试——字符串、排序与查找"><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/programmer-1653351.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机试——字符串、排序与查找"/></a><div class="content"><a class="title" href="/2020/03/29/%E6%9C%BA%E8%AF%95%E2%80%94%E2%80%94%E5%9F%BA%E6%9C%AC%E5%8A%9F/" title="机试——字符串、排序与查找">机试——字符串、排序与查找</a><time datetime="2020-03-29T10:58:29.000Z" title="发表于 2020-03-29 18:58:29">2020-03-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/03/29/%E6%9C%BA%E8%AF%95-%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98/" title="机试--数学问题"><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/programmer-1653351.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机试--数学问题"/></a><div class="content"><a class="title" href="/2020/03/29/%E6%9C%BA%E8%AF%95-%E6%95%B0%E5%AD%A6%E9%97%AE%E9%A2%98/" title="机试--数学问题">机试--数学问题</a><time datetime="2020-03-29T07:57:25.000Z" title="发表于 2020-03-29 15:57:25">2020-03-29</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/166e6d00-c507-11ea-84e7-c2a3f51f8996.png')"><div id="footer-wrap"><div class="copyright">&copy;2021 By Jack</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

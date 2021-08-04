@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>机器人仿真平台——Webots使用的一些背景信息</title>
+      <link href="/2021/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94Webots%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF/"/>
+      <url>/2021/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94Webots%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF/</url>
+      
+        <content type="html"><![CDATA[<p>最近做实验，需要使用webots仿真平台。记录一下webots中的一些概念和常用的操作。</p><h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ul><li>world：整个你可以看见的仿真环境，包括机器人和机器人所在的场景，以.wbt为扩展名，存储在world文件目录中。</li><li>controller：控制仿真环境中虚拟机器人的控制器，可以是C++、python、java、matlab等语言编写，放置在每个Webots项目的“ controllers”子目录中。</li><li>motion：定义的一些列的虚拟机器人动作，比如，前进，后退，左转、右转，握手等等。</li></ul><hr><ul><li><p>场景树：描述整个仿真环境的一种结构,如下图：<img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803200917964.png" alt="image-20210803200917964"></p><ul><li>WorldInfo：包含模拟的全局参数。</li><li>Viewpoint：定义主要视点相机参数。</li><li>TexturedBackground：定义场景的背景。</li><li>TexturedBackroundLight：定义与上述背景关联的光。</li><li>RectangleArena：定义场景中的方形棋盘。</li><li>WoodBox：定义场景中的三个木箱。</li></ul><p>每个节点都是场景中的元素，可以改元素下的属性(物体的大小、墙体的厚度、物体的位置等)，来调整仿真环境。</p></li></ul><h2 id="world的操作查看方式"><a href="#world的操作查看方式" class="headerlink" title="world的操作查看方式"></a>world的操作查看方式</h2><p>使用鼠标在3D视图中移动视点：</p><ul><li><p>视图旋转：左按钮移动</p></li><li><p>视图平移：右按钮移动</p></li><li><p>视图缩放：滚轮</p></li><li><p>物体位置调整——移动：选中物体，鼠标移动到物体的坐标轴箭头处，可以激活当前该轴向的物体位置调节功能。拖过鼠标可以调节物体位置。<img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803202027162.png" alt="image-20210803202027162"></p></li><li><p>物体姿态调整——转动：同理。选中物体，鼠标移动到物体的转动坐标轴处，可激活当前该转轴向的物体姿态调节功能。鼠标拖动可以调节物体姿态。</p></li></ul><p>当然，最方便的还是选中物体，<code>shift+鼠标左键移动</code>来将物体移动到某位置位置，<code>shift+鼠标右键移动</code> 来控制物体的旋转。</p><h2 id="你需要做的事情"><a href="#你需要做的事情" class="headerlink" title="你需要做的事情"></a>你需要做的事情</h2><ol><li>搭建wrold（环境 + 机器人 + 物体等）</li><li>编写控制机器人的控制器controller，来完成你需要实现的机器人行为功能。</li><li>设置机器人的控制器为你写好的controller。设置方式如下图<img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803205502071.png" alt="image-20210803205502071"></li></ol><h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><ul><li>修改Webots world保存时，首先要暂停模拟并将其重新加载到初始状态,即主虚拟计时器应显示0：00：00：000。否则，每次保存时，每个3D对象的位置都会累积错误。因此，对wrold的修改都应按以下顺序执行：暂停，重置，修改和保存仿真。</li></ul><h2 id="webots教程"><a href="#webots教程" class="headerlink" title="webots教程"></a>webots教程</h2><p>推荐csdn博主<a href="https://blog.csdn.net/weixin_41045354/article/details/105072630">“我是。”的教程</a> 和<a href="https://rupingcen.blog.csdn.net/article/details/106396478">“熊猫飞天”的教程</a><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803212647750.png" alt="image-20210803212647750"><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210803214508910.png" alt="image-20210803214508910"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> webots </tag>
+            
+            <tag> ROS仿真 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>非侵入式脑机接口落地情况报告</title>
       <link href="/2021/08/01/%E9%9D%9E%E4%BE%B5%E5%85%A5%E5%BC%8F%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E8%90%BD%E5%9C%B0%E6%83%85%E5%86%B5%E6%8A%A5%E5%91%8A/"/>
       <url>/2021/08/01/%E9%9D%9E%E4%BE%B5%E5%85%A5%E5%BC%8F%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E8%90%BD%E5%9C%B0%E6%83%85%E5%86%B5%E6%8A%A5%E5%91%8A/</url>
