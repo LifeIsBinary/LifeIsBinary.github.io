@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>python下包管理与虚拟环境</title>
+      <link href="/2021/08/07/python%E4%B8%8B%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%8E%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
+      <url>/2021/08/07/python%E4%B8%8B%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%8E%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用python，我们经常需要安装一些我们库/包，基于这些库提供的函数来构建自己的程序。这个时候就需要知道怎么来安装这些库。</p><p>并且我们在开发过程中，不同的项目用到的python版本不一致，如果直接在系统下安装python环境，在开发不同项目时安装库会因为python的版本问题产生冲突，而常用的方式是为每个项目创建env虚拟环境，在虚拟环境中安装项目需要的python版本和对应版本的库。每个项目使用自己的虚拟环境，自然不会产生冲突。</p><h2 id="包安装"><a href="#包安装" class="headerlink" title="包安装"></a>包安装</h2><blockquote><p>注意python在安装包时需要首先知道python的版本（python2/python3）和位数（32/64位）</p><p><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/image-20210625152102894.png" alt="image-20210625152102894"></p><p>包下载之前，先将<code>pip</code>和<code>setuptools</code>包更新到最新，减少包安装过程中的错误。</p></blockquote><h3 id="pip安装"><a href="#pip安装" class="headerlink" title="pip安装"></a>pip安装</h3><p>python安装后默认就带有pip包管理工具</p><h6 id="1-配置pip包的国内源"><a href="#1-配置pip包的国内源" class="headerlink" title="1. 配置pip包的国内源"></a>1. 配置pip包的国内源</h6><p>pip默认的包资源都是通过国外的pip官方网站，国内使用网速不好。因此，使用国内的镜像网站（清华pip源、豆瓣pip源）下载更加高效。</p><p><code>pip config set global.index-url http://mirrors.aliyun.com/pypi/simple</code></p><p><code>pip config set global.trusted-host mirrors.aliyun.com</code></p><p>or</p><p><code>pip config set global.index-url https://mirrors.aliyun.com/pypi/simple</code></p><h6 id="2-pip安装第三方包"><a href="#2-pip安装第三方包" class="headerlink" title="2. pip安装第三方包"></a>2. pip安装第三方包</h6><p>pip search xxx</p><blockquote><p>pip search 命令已被弃用。现在需要安装 pip-search包，使用<code>pip_search xxx</code></p></blockquote><p><code>pip install xxx</code></p><p><code>pip install xxx==1.01</code></p><blockquote><p>pip install 安装python相关包时，常常会由于网络问题，导致超时，下载失败，而且换成国内源的时候，也有可能出现这种情况。这个时候可以通过修改timeout加长download的下载时间，缓解超时的问题：<code>--timeout=100</code></p><p>pip install -i <a href="http://mirrors.aliyun.com/pypi/simple">http://mirrors.aliyun.com/pypi/simple</a> –trusted-host mirrors.aliyun.com 指定镜像源</p></blockquote><p><code>pip list</code>   列出当前已安装的第三方包</p><p><code>pip install --upgrade xxx</code> 更新包</p><p><code>pip  uninstall xxx</code> 卸载包</p><p><code>pip show xxx</code> 查看安装好的包信息</p><p><code>pip -V </code>查看当前使用的pip的版本和位置</p><h3 id="whell安装"><a href="#whell安装" class="headerlink" title="whell安装"></a>whell安装</h3><p>wheel文件本质上就是zip或者rar,只不过它更加方便python的安装以及使用</p><ol><li><p>下载xxx包的压缩文件xxx.whl</p></li><li><p>pip install xxx.whl</p></li></ol><blockquote><p>一般的包的whell文件都有收录在pypi.org中收录，所以从pypi下载即可。</p></blockquote><h3 id="source源码安装"><a href="#source源码安装" class="headerlink" title="source源码安装"></a>source源码安装</h3><ol><li><p>下载xxx包的源码文件</p></li><li><p>python setup.py install</p></li></ol><p><strong>说明</strong>：</p><p>其实当我们使用pip安装时，都是whl和source的安装方式，只不过是pip命令自动帮我们下载whl文件或源码，然后自动安装。可以仔细看一下pip install过程中输入的console信息。</p><h2 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h2><h3 id="Conda-包管理-虚拟环境"><a href="#Conda-包管理-虚拟环境" class="headerlink" title="Conda: 包管理 + 虚拟环境"></a>Conda: 包管理 + 虚拟环境</h3><h4 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h4><p>配置国内源</p><pre><code>添加：conda config --add channels https://mirrors.aliyun.com/pypi/simple/删除：conda config --remove channels https://mirrors.aliyun.com/pypi/simple/查看源：conda config --show-sourcec</code></pre><ul><li><p>查看安装的包： conda list</p></li><li><p>安装包：</p><p>conda search xxx</p><p>conda install xxx</p></li></ul><h4 id="虚拟环境-1"><a href="#虚拟环境-1" class="headerlink" title="虚拟环境"></a>虚拟环境</h4><p>创建虚拟环境：conda create –name envname python=2.7.10</p><blockquote><p>如何创建不同位数的python环境？</p><p>![image-20210720225219101](/Users/lifeisbinary/Library/Application Support/typora-user-images/image-20210720225219101.png)</p></blockquote><p>进入虚拟环境：conda activate envname</p><p>退出当前虚拟环境：conda deactivate</p><p>查看当前存在的虚拟环境：conda env list</p><p>删除虚拟环境 ：conda env remove -n envname</p><blockquote><p>有些包在conda的虚拟环境中安装后，在导入时会出现<code>SystemError: dynamic module not initialized properly</code>的错误，但是virtualenv创建的环境中却没有问题。如qi库（softbank机器人库），不知道怎么回事</p><p><img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/20210808001202.png" alt="image-20210615005905639"></p></blockquote><p><strong>虚拟环境（env）迁移：</strong></p><p>场景：想将conda创建env环境,copy到另一台同样操作系统的电脑上，方便继续在新电脑上开发。</p><p>首先要明白，迁移的内容是env环境，而env中安装过的库的pkg都在<code>anaconda/pkgs</code>目录下，因此迁移时，需要将env和库的pkg复制到另一台需要创建同样环境的电脑上。</p><blockquote><p>复制pkg后，就不需要在新电脑上重新下载了，会快很多。</p></blockquote><p>步骤如下：</p><ol><li><p>复制 <code>anaconda\envs</code>目录下需要拷贝的虚拟环境文件夹到新电脑上</p></li><li><p>复制<code>anaconda\pkgs</code>目录下的内容到新电脑上的<code>anaconda\pkgs</code>下。</p></li><li><p>通过 拷贝的虚拟环境 来构建新电脑上的虚拟环境</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n 新建虚拟环境名字 --clone path/to/要拷贝的虚拟环境名字 --offline</span><br></pre></td></tr></table></figure></li></ol><h3 id="virtualenv"><a href="#virtualenv" class="headerlink" title="virtualenv"></a>virtualenv</h3><p><code>virtualenv envname</code> 创建</p><p>运行envname\Script\acitvate来激活虚拟环境</p><p><code>deactivate</code> 推出虚拟环境</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://ckfanzhe.github.io/About_conda/">https://ckfanzhe.github.io/About_conda/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 包管理 </tag>
+            
+            <tag> 虚拟环境 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>提升效率的Windows 虚拟桌面（转载）</title>
       <link href="/2021/08/06/%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87%E7%9A%84Windows-%E8%99%9A%E6%8B%9F%E6%A1%8C%E9%9D%A2%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/"/>
       <url>/2021/08/06/%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87%E7%9A%84Windows-%E8%99%9A%E6%8B%9F%E6%A1%8C%E9%9D%A2%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89/</url>
