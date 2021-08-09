@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>webots2019a revision1下naoqisim连接Nao</title>
+      <link href="/2021/08/10/webots2019a-revision1%E4%B8%8Bnaoqisim%E8%BF%9E%E6%8E%A5Nao/"/>
+      <url>/2021/08/10/webots2019a-revision1%E4%B8%8Bnaoqisim%E8%BF%9E%E6%8E%A5Nao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前我在webots7.4.3上进行过Nao的仿真。（具体如何构建此仿真环境可以参考<a href="https://www.codenong.com/cs105901615/%EF%BC%89%E3%80%82">https://www.codenong.com/cs105901615/）。</a></p><p>webots7.4.3上Nao的naoqi版本是1.14.3，走起路容易摔倒，左转、右转也转不到位。所以想试试Webots新版下，会不会优化的好一些，毕竟naoqi升级到了2.1.4。</p><p>结论：</p><p>得益于naoqi大版本的升级，效果还是挺明显的。在同样一个场景下，机器人走路再也没有摔倒过，摇晃也基本没有。左右转、后转比之前有好转，有时能够转到位，有时没有办法转到位，但是比以前到达预期位置的误差角度小多了。</p><hr><p>在Webots 2019a revision 1下，使用Naoqi控制虚拟环境中的Nao机器人。</p><p>平台：windows10</p><h2 id="编译Naoqisim，并导入到Webots中"><a href="#编译Naoqisim，并导入到Webots中" class="headerlink" title="编译Naoqisim，并导入到Webots中"></a>编译Naoqisim，并导入到Webots中</h2><p>naoqisim是Nao机器人在Webots平台上的controller。</p><p>准备材料：</p><ol><li>naoqisim源码</li><li>MSYS2——window下的包管理软件，用来安装一些库或软件（gcc、make等）</li><li>Microsoft Visual Studio C++ 2010 Express</li></ol><blockquote><p>第三个文件不好下载。网上大部分给的都是在线安装的exe，容易出问题退出。</p><p>这里给一个目前（2021年）可以用的下载教程（<a href="https://blog.csdn.net/baojining/article/details/117433410?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-10.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-10.control">Visual c++ 2010 express 学习版离线安装方法</a>）。</p></blockquote><p>步骤：</p><ol><li>首先，使用MYSY2进入下载好的naoqisim根目录下，执行make。脚本会自动下载Nao Simulator SDK并安装。</li><li>然后，使用下载的Visual Studio 2010 打开controllers/naoqisim/naoqisim.sln`,进行编译，这样就得到了naoqisim这个controller。</li><li>接着，将naoqisim根目录下的aldebaran文件夹（其中有SDK）复制到Webots下的<code>projects/robots/softbank/nao/</code>目录中，再将刚才编译的<code>controllers/naoqisim</code>文件夹复制到<code>projects/robots/softbank/nao/controllers/</code>下。</li><li>最后，打开适用于nao机器人的world文件，在场景数中找到Nao机器人元素，设置其中的contorller和naoqi运行的端口（见下图）。<img src="https://cdn.jsdelivr.net/gh/LifeIsBinary/Picbed/20210810001737.png" alt="image-20210810001130466"></li></ol><h2 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><ol><li><p>MSYS2如何进入到你下载好的naoqisim目录。</p><p>如何你打开MYSY2 console，<code>pwd</code>发现是在<code>/home/[Username]</code>目录。</p><p>写绝对路径，来访问吧。</p><p><code>cd /c/User/[Username]/Downlaods/naoqisim-master</code></p><blockquote><p>注意这里，是linux下的文件分割符“/”，同时盘符前需要加“/”。</p></blockquote></li><li><p>在naoqisim目录下，make。提示command not found；</p><p><code>pacman -S make</code></p><p><code>pacman -S unzip</code>(我系统下这个也没有，make不下去了)</p></li><li><p>再次make，报错</p><p>从错误前的log信息可以看出此时simulator-sdk已经有了。报错主要是应为controller的问题。就是说controlelr中编译有问题。</p><p>naoqisim项目的readme文件，提示我们。有了sdk之后，需要在vs2010中打开项目来编译controller</p></li><li><p>vs2010中打开naoqisim.sln，生成。再次报错 error MSB8008。</p><p>按照这个博客的方法（<a href="https://blog.csdn.net/liuqiyao_01/article/details/38656873%EF%BC%89%EF%BC%8C%E5%B0%86%E5%B9%B3%E5%8F%B0%E5%B7%A5%E4%BD%9C%E9%9B%86%E8%AE%BE%E7%BD%AE%E4%B8%BAv100%EF%BC%8C%E5%8D%B3%E4%BD%BF%E7%94%A8VS2010%E6%89%93%E5%BC%80%E5%B7%A5%E7%A8%8B%E3%80%82">https://blog.csdn.net/liuqiyao_01/article/details/38656873），将平台工作集设置为v100，即使用VS2010打开工程。</a></p></li></ol><h2 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h2><p>choregraphe要装对应版本的，也就是2.1.4，新版本无法连接虚拟环境中的Nao。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Nao开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nao </tag>
+            
+            <tag> Webots </tag>
+            
+            <tag> naoqisim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python下包管理与虚拟环境</title>
       <link href="/2021/08/07/python%E4%B8%8B%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%8E%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
       <url>/2021/08/07/python%E4%B8%8B%E5%8C%85%E7%AE%A1%E7%90%86%E4%B8%8E%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</url>
