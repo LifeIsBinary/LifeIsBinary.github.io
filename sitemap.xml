@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lifeisbinary.space/2022/12/04/Mac-%E7%9A%84%E6%93%8D%E4%BD%9C-%E4%B8%8E-tip/</loc>
+    
+    <lastmod>2022-12-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lifeisbinary.space/2021/08/10/webots2019a-revision1%E4%B8%8Bnaoqisim%E8%BF%9E%E6%8E%A5Nao/</loc>
+    
+    <lastmod>2021-08-16</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lifeisbinary.space/2021/08/14/%E2%80%9Cpython2%E4%B8%8B%E5%AE%89%E8%A3%85qi%E5%92%8Calmath%E5%BA%93import%E5%87%BA%E9%94%99%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
     
     <lastmod>2021-08-14</lastmod>
@@ -17,13 +31,6 @@
   
   <url>
     <loc>https://lifeisbinary.space/2021/08/03/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%BB%BF%E7%9C%9F%E5%B9%B3%E5%8F%B0%E2%80%94%E2%80%94Webots%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%83%8C%E6%99%AF%E4%BF%A1%E6%81%AF/</loc>
-    
-    <lastmod>2021-08-14</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lifeisbinary.space/2021/08/10/webots2019a-revision1%E4%B8%8Bnaoqisim%E8%BF%9E%E6%8E%A5Nao/</loc>
     
     <lastmod>2021-08-14</lastmod>
     
@@ -151,7 +158,7 @@
 
   <url>
     <loc>https://lifeisbinary.space/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -159,161 +166,175 @@
   
   <url>
     <loc>https://lifeisbinary.space/tags/open-source/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/%E6%8C%82%E9%9D%A2/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/markdwon/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%A4%8D%E8%AF%95%E4%B8%8A%E6%9C%BA%E9%A2%98/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/ROS%E4%BB%BF%E7%9C%9F/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/BCI/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lifeisbinary.space/tags/mac/</loc>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/win/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/%E8%99%9A%E6%8B%9F%E6%A1%8C%E9%9D%A2/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/macToWin/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/%E5%8C%85%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/Nao/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/Webots/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/naoqisim/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/live2d/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/%E9%A5%BA%E5%AD%90/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/ROS/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/%E9%9D%9E%E4%BE%B5%E5%85%A5%E5%BC%8FBCI/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/BCI%E5%BA%94%E7%94%A8/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/qi/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/tags/almath/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lifeisbinary.space/tags/%E6%95%88%E7%8E%87/</loc>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -322,56 +343,56 @@
   
   <url>
     <loc>https://lifeisbinary.space/categories/%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/categories/%E5%B1%95%E7%8E%B0%E5%BD%A2%E5%BC%8F/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/categories/%E6%9C%BA%E8%AF%95/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/categories/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8tips/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/categories/python/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/categories/Nao%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/categories/%E7%AE%80%E9%A4%90/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lifeisbinary.space/categories/%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3/</loc>
-    <lastmod>2021-08-14</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
